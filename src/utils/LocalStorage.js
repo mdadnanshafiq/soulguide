@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const getLocalStorage = () => {
   const data = JSON.parse(localStorage.getItem("donation")) || [];
   return data;
@@ -9,8 +11,8 @@ export const saveLocalStorage = (data) => {
   if (!exist) {
     savedData.push(data);
     localStorage.setItem("donation", JSON.stringify(savedData));
-    alert("Added");
+    toast.success("Added");
   } else {
-    alert("Exist");
+    toast.warn("Exist");
   }
 };

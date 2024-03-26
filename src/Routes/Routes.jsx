@@ -4,6 +4,7 @@ import Root from "../Layout/Root";
 import Home from "../Pages/Home/Home";
 import DonationDetails from "../Pages/DonationDetails/DonationDetails";
 import Donation from "../Pages/Donation/Donation";
+import Stats from "../Pages/Stats/Stats";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/stats",
-        element: <h1>stats</h1>,
+        element: <Stats></Stats>,
       },
       {
         path: "/donation-details/:id",

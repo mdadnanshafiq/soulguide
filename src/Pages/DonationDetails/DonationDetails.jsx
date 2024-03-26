@@ -2,11 +2,12 @@ import { useParams } from "react-router-dom";
 import useDonationData from "../../Hooks/useDonationData";
 import { useEffect, useState } from "react";
 import { saveLocalStorage } from "../../utils/LocalStorage";
+import Loader from "../../components/Loader/Loader";
 
 const DonationDetails = () => {
   const [singleData, setSingleData] = useState({});
   const { id } = useParams();
-  const { data } = useDonationData();
+  const { data, loading } = useDonationData();
 
   const handleDonate = () => {
     saveLocalStorage(singleData);
@@ -18,6 +19,10 @@ const DonationDetails = () => {
       setSingleData(single);
     }
   }, [id, data]);
+
+  if (loading) {
+    return <Loader></Loader>;
+  }
 
   return (
     <div>

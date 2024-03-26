@@ -1,11 +1,13 @@
-import useDonationData from "../../Hooks/useDonationData";
 import CategoryCard from "../CategoryCard/CategoryCard";
+import Loader from "../Loader/Loader";
 
-const Categories = () => {
-  const { data } = useDonationData();
+const Categories = ({ loading, filteredData }) => {
+  if (loading) {
+    return <Loader></Loader>;
+  }
   return (
     <div className="grid md:grid-cols-4 justify-center items-center gap-4 mx-auto">
-      {data.map((item, idx) => (
+      {filteredData.map((item, idx) => (
         <CategoryCard key={idx} data={item}></CategoryCard>
       ))}
     </div>

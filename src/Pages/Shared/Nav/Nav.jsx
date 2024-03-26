@@ -19,7 +19,13 @@ function NavList() {
       >
         <NavLink
           to={"/"}
-          className="flex items-center hover:text-blue-500 transition-colors text-xl"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center text-red-500 underline hover:text-blue-500 transition-colors text-xl"
+              : isPending
+              ? "flex items-center text-yellow-600 hover:text-blue-500 transition-colors text-xl"
+              : "flex items-center hover:text-blue-500 transition-colors text-xl"
+          }
         >
           Home
         </NavLink>
@@ -32,7 +38,13 @@ function NavList() {
       >
         <NavLink
           to={"/donation"}
-          className="flex items-center hover:text-blue-500 transition-colors text-xl"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center text-red-500 underline hover:text-blue-500 transition-colors text-xl"
+              : isPending
+              ? "flex items-center text-yellow-600 hover:text-blue-500 transition-colors text-xl"
+              : "flex items-center hover:text-blue-500 transition-colors text-xl"
+          }
         >
           Donation
         </NavLink>
@@ -45,7 +57,13 @@ function NavList() {
       >
         <NavLink
           to={"/stats"}
-          className="flex items-center hover:text-blue-500 transition-colors text-xl"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center text-red-500 underline hover:text-blue-500 transition-colors text-xl"
+              : isPending
+              ? "flex items-center text-yellow-600 hover:text-blue-500 transition-colors text-xl"
+              : "flex items-center hover:text-blue-500 transition-colors text-xl"
+          }
         >
           Statistics
         </NavLink>
